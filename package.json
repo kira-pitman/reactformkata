@@ -1,5 +1,6 @@
 {
   "name": "kata-react-forms",
+  "type": "module",
   "version": "0.3.0",
   "description": "A Kata for React Forms",
   "scripts": {

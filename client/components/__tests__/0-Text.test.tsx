@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 import { describe, it, expect, vi } from 'vitest'
 import { screen, within } from '@testing-library/react'
-import { renderRoute } from '../../test/utils'
+import { renderRoute } from '../../test/utils.tsx'
 
 describe('<TextForm />', () => {
   it.skip('should allow user to type text into input', async () => {
