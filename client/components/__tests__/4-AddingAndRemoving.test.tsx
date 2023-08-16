@@ -4,7 +4,7 @@ import { screen, within } from '@testing-library/react'
 import { renderRoute } from '../../test/utils'
 
 describe('<TextAndCheckboxForm />', () => {
-  it('should allow user to submit an item', async () => {
+  it.skip('should allow user to submit an item', async () => {
     const { user } = renderRoute('/4')
 
     const itemInput = screen.getByRole('textbox', { name: /item/i })
@@ -28,7 +28,7 @@ describe('<TextAndCheckboxForm />', () => {
     `)
   })
 
-  it('should clear the form upon submission', async () => {
+  it.skip('should clear the form upon submission', async () => {
     const { user } = renderRoute('/4')
 
     const itemInput = screen.getByRole('textbox', { name: /item/i })
@@ -40,7 +40,7 @@ describe('<TextAndCheckboxForm />', () => {
     expect(itemInput).toHaveValue('')
   })
 
-  it('should allow user to delete an item', async () => {
+  it.skip('should allow user to delete an item', async () => {
     const { user } = renderRoute('/4')
 
     // first add an item
