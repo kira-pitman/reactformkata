@@ -19,7 +19,8 @@ export default function TextForm() {
     <>
       <form>
         <label htmlFor="newItem">New Item:</label>
-        <input type="text" name="newItem" id="newItem" value={newItem} />
+        <input type="text" name="newItem" id="newItem" value={newItem}           
+        onChange={e => setNewItem(e.target.value)}/>
         <button>Submit</button>
       </form>
       <h2 id="list">List: </h2>
