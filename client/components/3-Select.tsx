@@ -13,16 +13,12 @@ export default function SelectForm() {
       return
     }
 
-    console.log('Submitting:', selectedCar)
+    setCars([...cars, selectedCar])
+    setSelectedCar('')
   }
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    console.log(
-      'Select changed:',
-      event.target.value,
-      'on input:',
-      event.target.name
-    )
+    setSelectedCar(event.target.value)
   }
 
   return (
@@ -30,7 +26,7 @@ export default function SelectForm() {
       <form onSubmit={handleSubmit}>
         <p>Selected car: {selectedCar}</p>
         <label htmlFor="car">Select a Car:</label>
-        <select name="car" id="car">
+        <select name="car" id="car" value={selectedCar} onChange={handleChange}>
           <option value="">--Please choose an option--</option>
           <option value="ferrari">Ferrari</option>
           <option value="aston-martin">Aston Martin</option>
