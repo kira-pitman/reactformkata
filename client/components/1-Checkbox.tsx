@@ -7,12 +7,11 @@ export default function CheckboxForm() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-
-    console.log('Submitting:', isChecked)
+    setList([...list, isChecked])
   }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log('Checkbox changed:', event.target.checked)
+    setIsChecked(event.target.checked)
   }
 
   return (
@@ -24,6 +23,7 @@ export default function CheckboxForm() {
           name="checkbox"
           id="checkbox"
           checked={isChecked}
+          onChange={handleChange}
         />
         <button>Submit</button>
       </form>
