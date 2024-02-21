@@ -20,18 +20,26 @@ export default function AddingAndDeletingForm() {
       id: uuid(),
     }
 
-    console.log('Submitting item:', newItem)
+    setList([...list, newItem])
+    setItem('')
   }
 
   const handleDelete = (id: string) => {
-    console.log('Delete item with id:', id)
+    const deleteItem = list.findIndex((listItem) => listItem.id === id)
+    const listCopy = [...list]
+    listCopy.splice(deleteItem, 1)
+    setList(listCopy)
   }
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setItem(event.target.value)
+  } 
 
   return (
     <>
       <form onSubmit={handleSubmit}>
         <label htmlFor="item">Item:</label>
-        <input type="text" name="item" id="item" />
+        <input type="text" name="item" id="item" value={item} onChange={handleChange}/>
         <button>Add Item</button>
       </form>
 
