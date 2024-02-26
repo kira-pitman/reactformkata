@@ -7,6 +7,7 @@ export default function CheckboxForm() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+
     setList([...list, isChecked])
   }
 

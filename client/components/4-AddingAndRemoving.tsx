@@ -22,6 +22,8 @@ export default function AddingAndDeletingForm() {
 
     setList([...list, newItem])
     setItem('')
+
+    console.log('Submitting item:', newItem)
   }
 
   const handleDelete = (id: string) => {
@@ -33,13 +35,13 @@ export default function AddingAndDeletingForm() {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setItem(event.target.value)
-  } 
+  }
 
   return (
     <>
       <form onSubmit={handleSubmit}>
         <label htmlFor="item">Item:</label>
-        <input type="text" name="item" id="item" value={item} onChange={handleChange}/>
+        <input type="text" name="item" id="item" value={item} onChange={handleChange} />
         <button>Add Item</button>
       </form>
 

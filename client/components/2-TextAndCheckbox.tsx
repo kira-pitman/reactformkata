@@ -28,21 +28,23 @@ export default function TextAndCheckboxForm() {
     // read about computed keys: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#computed_property_names
     // we want to set `name` when `event.target.name` is `name`
     // and set `hobby` when `event.target.name` is `hobby`
-
-    // define even target
-    // then usual setformstate
     const {name, value} = event.target
     setFormState((formState) => ({...formState, [name]: value}))
+    
   }
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     // here, we can set isStudent as normal, because there's only one checkbox using this handler
 
-    // set event target
-    // then usual formstate
     const {name, checked} = event.target
-    setFormState((formState) => ({...formState, [name]: checked}))
-    
+    setFormState((formState) => ({...formState, [name] : checked}))
+
+    console.log(
+      'Checkbox changed:',
+      event.target.checked,
+      'on input:',
+      event.target.name
+    )
   }
 
   return (

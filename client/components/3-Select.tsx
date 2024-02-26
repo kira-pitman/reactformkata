@@ -15,10 +15,18 @@ export default function SelectForm() {
 
     setCars([...cars, selectedCar])
     setSelectedCar('')
+    console.log('Submitting:', selectedCar)
   }
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    
     setSelectedCar(event.target.value)
+    console.log(
+      'Select changed:',
+      event.target.value,
+      'on input:',
+      event.target.name
+    )
   }
 
   return (
